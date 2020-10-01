@@ -1,0 +1,17 @@
+export const COLORS = {
+  statusbar: '#004E8C',
+  themecolor: '#ec482f',
+  HeaderbarIconColor: '#ffff',
+  white: '#ffff',
+  placeholdertextcolor: '#818384',
+  red: 'red',
+  buttonColor: '#0148a4',
+  green: 'green',
+  AddTextColor: '#f4f4f4',
+  bordercolor: '#e0e0e0',
+  greenbuttoncolor: '#33AB20',
+  HouseHoldSectionBgcolor: '#36d7ff',
+  shadowTextColor: '#949491',
+  staplesbgcolor: '#facac3',
+  locationtrackerplacebgcolor: '#E5E5E5',
+};
