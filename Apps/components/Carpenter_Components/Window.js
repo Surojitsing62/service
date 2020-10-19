@@ -28,28 +28,24 @@ export default class Window extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Motorized Blinds fitting"
-          price="119"
           desc="Addittional curtain rod brackets"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Non Motorized Blinds fitting"
-          price="169"
           desc="Addittional curtain rod brackets"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="window installtion(Greater than 48 inches"
-          price="566"
           desc="Addittional curtain rod brackets"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="window installtion(Greater than 48 inches"
-          price="566"
           desc="Addittional curtain rod brackets"
           navigation={this.props.navigation}
         />

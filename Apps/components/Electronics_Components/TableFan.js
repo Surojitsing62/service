@@ -28,14 +28,12 @@ export default class TableFan extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Table Fan Replacemnet"
-          price="199"
           desc="Replacement"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Table Fan Insatalltion"
-          price="169"
           desc="Installtion"
           navigation={this.props.navigation}
         />

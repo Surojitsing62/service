@@ -26,7 +26,7 @@ export default serviceimagedata = [
   {
     id: 4,
     imgsrc: painter,
-    title: 'Painter',
-    url: 'CleaningStack',
+    title: 'Painters',
+    url: 'PainterStack',
   },
 ];

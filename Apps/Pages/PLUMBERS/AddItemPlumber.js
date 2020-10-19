@@ -18,6 +18,7 @@ import TapMixer from '../../components/Plumber_Components/TapMixer';
 import Toilet from '../../components/Plumber_Components/Toilet';
 import WaterTank from '../../components/Plumber_Components/WaterTank';
 import Motor from '../../components/Plumber_Components/Motor';
+import HeaderBar from '../../constants/HeaderBar';
 export default class AddItemPlumber extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,7 @@ export default class AddItemPlumber extends Component {
   render() {
     return (
       <View style={styles.MainContainer}>
+        <HeaderBar name="Plumbers" navigation={this.props.navigation} />
         <View style={styles.HeaderStyle}>
           <ScrollView
             scrollEventThrottle={16}
@@ -82,7 +84,7 @@ export default class AddItemPlumber extends Component {
             // marginBottom: hp('1%'),
           }}>
           <TouchableWithoutFeedback
-            onPress={() => this.props.navigation.navigate('LocationStack')}>
+            onPress={() => this.props.navigation.navigate('Address')}>
             <View style={styles.subscribeButton}>
               <Text
                 style={{

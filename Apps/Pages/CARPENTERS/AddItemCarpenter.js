@@ -18,6 +18,7 @@ import Furniture from '../../components/Carpenter_Components/Furniture';
 import Tv from '../../components/Carpenter_Components/Tv';
 import Furniture_Repair from '../../components/Carpenter_Components/Furniture_Repair';
 import Window from '../../components/Carpenter_Components/Window';
+import HeaderBar from '../../constants/HeaderBar';
 export default class AddItemCarpenter extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,7 @@ export default class AddItemCarpenter extends Component {
   render() {
     return (
       <View style={styles.MainContainer}>
+        <HeaderBar name="Carpenters" navigation={this.props.navigation} />
         <View style={styles.HeaderStyle}>
           <ScrollView
             scrollEventThrottle={16}
@@ -79,7 +81,7 @@ export default class AddItemCarpenter extends Component {
             // marginBottom: hp('1%'),
           }}>
           <TouchableWithoutFeedback
-            onPress={() => this.props.navigation.navigate('LocationStack')}>
+            onPress={() => this.props.navigation.navigate('Address')}>
             <View style={styles.subscribeButton}>
               <Text
                 style={{

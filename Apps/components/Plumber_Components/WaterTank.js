@@ -29,14 +29,12 @@ export default class WaterTank extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Overhead Tank Installtion(Upto 500L)"
-          price="599"
           desc="Best suited for installation"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Water Tank Cleaning"
-          price="799"
           desc="Cleaning"
           navigation={this.props.navigation}
         />

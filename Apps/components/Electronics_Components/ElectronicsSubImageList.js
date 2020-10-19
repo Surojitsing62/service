@@ -53,6 +53,23 @@ export default class ElectronicsSubImageList extends Component {
             flexDirection: 'row',
           }}>
           {this.Imagelist()}
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Otherserives')}>
+            <View style={styles.Items}>
+              <Image
+                resizeMode="contain"
+                source={{
+                  uri:
+                    'https://camdenkelly.com/wp-content/uploads/2019/04/question-mark.png',
+                }}
+                style={styles.imageStyles}
+              />
+
+              <Text numberOfLines={2} style={styles.textsize}>
+                Others
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -79,7 +96,8 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   textsize: {
-    fontSize: hp('1.5%'),
+    fontSize: hp('1.8%'),
+    fontWeight: 'bold',
     padding: hp('0.3%'),
     margin: hp('0.4%'),
     textAlign: 'center',

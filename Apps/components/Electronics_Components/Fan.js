@@ -32,21 +32,18 @@ export default class Fan extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Celling Fan Installtion"
-          price="199"
           desc="Best suited for installation"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Celling Fan Repair"
-          price="169"
           desc="Coil Repair and Ball Bearings replaced in shop if required"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc3}
           itemName="Celling Fan Replacment"
-          price="169"
           desc="Celling,Exhaust or wall Fan"
           navigation={this.props.navigation}
         />

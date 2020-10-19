@@ -32,21 +32,18 @@ export default class DoorBell extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Door Replacemnet"
-          price="199"
           desc="Excluding wiring and box set up"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Door Bell Insatalltion"
-          price="169"
           desc="Includes creating cavity & installing lock"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc3}
           itemName="Door Bell Repair"
-          price="169"
           desc="Installtion or Repair"
           navigation={this.props.navigation}
         />

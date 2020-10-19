@@ -30,21 +30,18 @@ export default class BasinSink extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Bath & Sink"
-          price="199"
           desc="Best suited for installation or Leakage"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Washbasin Repair"
-          price="169"
           desc="Suitable for leakage under basin"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Washbasin Repair"
-          price="169"
           desc="Suitable for leakage under basin"
           navigation={this.props.navigation}
         />

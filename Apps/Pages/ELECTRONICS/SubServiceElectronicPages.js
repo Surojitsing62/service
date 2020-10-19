@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, ScrollView} from 'react-native';
-// import ImageListByHorizontalScroll from '../../components/BannerImage_Horizontal/ImageListByHorizontalScroll';
+import {
+  Text,
+  StyleSheet,
+  View,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from 'react-native';
+
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {Button, Header, Title, Icon} from 'native-base';
+import {COLORS} from '../../constants/Colors';
 
 import ElectronicsSubImageList from '../../components/Electronics_Components/ElectronicsSubImageList';
 
@@ -22,6 +30,23 @@ export default class SubServiceElectronicPages extends Component {
   render() {
     return (
       <View style={styles.mainRoot}>
+        <Header
+          style={{
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            backgroundColor: COLORS.themecolor,
+          }}
+          androidStatusBarColor="#000">
+          <TouchableWithoutFeedback>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.navigate('Home')}>
+              <Icon name="arrowleft" type="AntDesign" />
+            </Button>
+          </TouchableWithoutFeedback>
+
+          <Title>Electronics</Title>
+        </Header>
         <ScrollView showsVerticalScrollIndicator={false}>
           <ElectronicsImageBanner />
           <View style={styles.SectionList}>

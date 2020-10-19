@@ -43,8 +43,8 @@ export default class BookingHistory extends Component {
               </Text>
               <View>
                 <Text style={{fontSize: hp('1.8%')}}>
-                  144, Remount Rd, Majherhat, Mominpore, Kolkata, West Bengal
-                  700027
+                  Head Office-42,Nayanpur Road,Japorigog,Ganeshguri,Guwahati-6,
+                  Assam
                 </Text>
               </View>
             </View>

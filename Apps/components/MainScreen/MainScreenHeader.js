@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View, TouchableNativeFeedback} from 'react-native';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-// import { TouchableNativeFeedback } from 'react-native-gesture-handler';
 
+import {Icon} from 'native-base';
 export default class MainScreenHeader extends Component {
   constructor(props) {
     super(props);
@@ -19,19 +19,20 @@ export default class MainScreenHeader extends Component {
         <TouchableNativeFeedback
           onPress={() => this.props.navigation.navigate('LocationStack')}>
           <View style={styles.headerText}>
-            <Text>
-              <SimpleLineIcons
-                name="location-pin"
-                style={{fontSize: hp('1.8%'), color: '#fff'}}
-              />
-            </Text>
+            <Icon
+              name="location-pin"
+              type="SimpleLineIcons"
+              style={{fontSize: hp('1.8%'), color: '#fff'}}
+            />
+
             <Text style={{color: '#fff', paddingLeft: hp('1%')}}>
-              Kolkata, West Bengal
+              Ganeshguri,Assam..
             </Text>
             <Text style={{padding: hp('1%')}}>
-              <SimpleLineIcons
+              <Icon
                 name="arrow-down"
-                style={{fontSize: hp('1.5%'), color: '#fff'}}
+                type="SimpleLineIcons"
+                style={{fontSize: hp('1.8%'), color: '#fff'}}
               />
             </Text>
           </View>
@@ -40,8 +41,9 @@ export default class MainScreenHeader extends Component {
         <TouchableNativeFeedback
           onPress={() => this.props.navigation.navigate('Search')}>
           <View style={styles.textInputfiled}>
-            <Ionicons
-              name="ios-search"
+            <Icon
+              name="search1"
+              type="AntDesign"
               style={{fontSize: hp('2%'), color: '#ccc'}}
             />
             <Text

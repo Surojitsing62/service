@@ -32,21 +32,18 @@ export default class BathFitting extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Bath Fitting Installtion"
-          price="99"
           desc="Any one of top or holder"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.img2}
           itemName="Shower Installtion - Celling Mounted"
-          price="169"
           desc="Any one of top or holder"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.img3}
           itemName="Shower Installtion - Wall Mounted"
-          price="139"
           desc="Any one of top or holder"
           navigation={this.props.navigation}
         />

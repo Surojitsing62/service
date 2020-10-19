@@ -1,5 +1,5 @@
 import React from 'react';
-import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -7,15 +7,14 @@ import {
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import {Icon} from 'native-base';
-
+import {View, Text} from 'react-native';
+import {COLORS} from '../constants/Colors';
 import MainScreen from '../screens/MainScreen';
 import Bookings from '../screens/Booking/Bookings';
 import ProfileScreen from '../screens/ProfileScreen';
 
 import Otp from '../screens/Otp';
-import ForgotPassword from '../screens/ForgotPassword';
 import LoginPage from '../screens/LoginPage';
-import SignUpPages from '../screens/SignUpPages';
 import SearchingPages from '../Pages/SearchingPages';
 
 import SubServicePlumberPages from '../Pages/PLUMBERS/SubServicePlumberPages';
@@ -28,15 +27,21 @@ import AddItemCarpenter from '../Pages/CARPENTERS/AddItemCarpenter';
 import AddItemElectronic from '../Pages/ELECTRONICS/AddItemElectronic';
 import SubServiceElectronicPages from '../Pages/ELECTRONICS/SubServiceElectronicPages';
 
-import SubServiceCleaningPages from '../Pages/CLEANING_DISINFECTION/SubServiceCleaningPages';
-import AddItemCleaning from '../Pages/CLEANING_DISINFECTION/AddItemCleaning';
+import SubServicePainterPages from '../Pages/Painters/SubServicePainterPages';
+import AddItemPainter from '../Pages/Painters/AddItemPainter';
 
-import SubServiceAcPages from '../Pages/AC_SERVICES/SubServiceAcPages';
-import AddItemAc from '../Pages/AC_SERVICES/AddItemAc';
-import PaymentCheckOut from '../Pages/PaymentCheckOut';
 import LocationSearch from '../Pages/LocationSearch';
 import Subscription from '../screens/Subscription';
 import BookingDetails from '../components/Booking/BookingDetails';
+import DeliveryAddress from '../Pages/Address/DeliveryAddress';
+import BookingDate from '../Pages/BookingDate/BookingDate';
+import Otherservice from '../screens/OtherWork/Otherservice';
+import SummaryService from '../Pages/SummaryService/SummaryService';
+import Home from '../screens/Shop/Home';
+import ItemDetails from '../components/Shopping/ItemDetails';
+import MyCart from '../components/Shopping/MyCart';
+import PaymentOption from '../Pages/PaymentCheckOut';
+
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
@@ -64,6 +69,34 @@ const TabNavigator = createBottomTabNavigator(
             color={tintColor}
             style={{fontSize: hp('2.5%'), color: tintColor}}
           />
+        ),
+      },
+    },
+    Shop: {
+      screen: Home,
+      navigationOptions: {
+        tabBarLabel: 'Shopping',
+        tabBarIcon: ({tintColor}) => (
+          <View
+            style={{
+              position: 'absolute',
+              top: -10,
+              zIndex: 1,
+              elevation: 2,
+              width: 40,
+              height: 40,
+              borderRadius: 100,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: COLORS.themecolor,
+            }}>
+            <Icon
+              type="FontAwesome"
+              name="shopping-bag"
+              color={tintColor}
+              style={{fontSize: hp('2%'), color: COLORS.white}}
+            />
+          </View>
         ),
       },
     },
@@ -103,7 +136,7 @@ const TabNavigator = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: '#f74d14',
       labelStyle: {
-        fontSize: 10,
+        fontSize: hp('1.5%'),
       },
       // showLabel:false
     },
@@ -112,12 +145,12 @@ const TabNavigator = createBottomTabNavigator(
 
 const LocationStack = createStackNavigator(
   {
-    Location: {
+    LocationSearch: {
       screen: LocationSearch,
     },
   },
   {
-    initialRouteName: 'Location',
+    initialRouteName: 'LocationSearch',
     headerMode: 'none',
   },
 );
@@ -140,37 +173,47 @@ const Purchase = createStackNavigator(
   },
   {
     initialRouteName: 'Purchase',
-    // headerMode: 'none',
+    headerMode: 'none',
   },
 );
-const Payments = createStackNavigator(
-  {
-    Payments: {
-      screen: PaymentCheckOut,
-    },
-  },
-  {
-    initialRouteName: 'Payments',
-    // headerMode: 'none',
-  },
-);
+
 const PlumberStack = createStackNavigator(
   {
     PlumberSubServiceScreen: {
       screen: SubServicePlumberPages,
       navigationOptions: {
         title: 'Plumber',
+        headerBackTitle: 'Plumber',
       },
     },
     PlumberItem: {
       screen: AddItemPlumber,
       navigationOptions: {
         title: 'Plumber',
+        headerBackTitle: 'Plumber',
+        // headerShown: 'Plumber',
       },
+    },
+    Otherserives: {
+      screen: Otherservice,
+    },
+    Address: {
+      screen: DeliveryAddress,
+      navigationOptions: {
+        title: 'Address',
+        // headerBackTitle: 'Address',
+      },
+    },
+    DateBooking: {
+      screen: BookingDate,
+    },
+    SummaryService: {
+      screen: SummaryService,
     },
   },
   {
     initialRouteName: 'PlumberSubServiceScreen',
+    headerMode: 'none',
   },
 );
 
@@ -188,9 +231,27 @@ const CarpenterStack = createStackNavigator(
         title: 'Carpenter',
       },
     },
+    Otherserives: {
+      screen: Otherservice,
+    },
+    Address: {
+      screen: DeliveryAddress,
+      navigationOptions: {
+        title: 'Address',
+        // headerBackTitle: 'Address',
+      },
+    },
+
+    DateBooking: {
+      screen: BookingDate,
+    },
+    SummaryService: {
+      screen: SummaryService,
+    },
   },
   {
     initialRouteName: 'CarpenterSubServiceScreen',
+    headerMode: 'none',
   },
 );
 
@@ -208,28 +269,62 @@ const ElectronicStack = createStackNavigator(
         title: 'Electronic',
       },
     },
+    Otherserives: {
+      screen: Otherservice,
+    },
+    Address: {
+      screen: DeliveryAddress,
+      navigationOptions: {
+        title: 'Address',
+        // headerBackTitle: 'Address',
+      },
+    },
+    DateBooking: {
+      screen: BookingDate,
+    },
+    SummaryService: {
+      screen: SummaryService,
+    },
   },
   {
     initialRouteName: 'ElectronicSubServiceScreen',
+    headerMode: 'none',
   },
 );
-const CleaningStack = createStackNavigator(
+const PainterStack = createStackNavigator(
   {
-    CleaningSubServiceScreen: {
-      screen: SubServiceCleaningPages,
+    PainterSubServiceScreen: {
+      screen: SubServicePainterPages,
       navigationOptions: {
-        title: 'Cleaning',
+        title: 'Painter',
       },
     },
-    CleaningItem: {
-      screen: AddItemCleaning,
+    PainterItem: {
+      screen: AddItemPainter,
       navigationOptions: {
-        title: 'Cleaning',
+        title: 'Painter',
       },
+    },
+    Otherserives: {
+      screen: Otherservice,
+    },
+    Address: {
+      screen: DeliveryAddress,
+      navigationOptions: {
+        title: 'Address',
+        // headerBackTitle: 'Address',
+      },
+    },
+    DateBooking: {
+      screen: BookingDate,
+    },
+    SummaryService: {
+      screen: SummaryService,
     },
   },
   {
-    initialRouteName: 'CleaningSubServiceScreen',
+    initialRouteName: 'PainterSubServiceScreen',
+    headerMode: 'none',
   },
 );
 const BookingStack = createStackNavigator(
@@ -243,33 +338,29 @@ const BookingStack = createStackNavigator(
   },
   {
     initialRouteName: 'ViewDetailsBooking',
+    headerMode: 'none',
   },
 );
-
-// const SubscriptionStack = createStackNavigator(
-//   {
-//     ViewDetailsBooking: {
-//       screen: Subscription,
-//       navigationOptions: {
-//         title: 'Booking Details',
-//       },
-//     },
-//   },
-//   {
-//     initialRouteName: 'ViewDetailsBooking',
-//   },
-// );
+const AddressStack = createStackNavigator(
+  {
+    Address: {
+      screen: DeliveryAddress,
+      navigationOptions: {
+        title: 'Address',
+        // headerBackTitle: 'Plumber',
+      },
+    },
+  },
+  {
+    initialRouteName: 'Address',
+    headerMode: 'none',
+  },
+);
 
 const HomeStack = createStackNavigator(
   {
     Login: {
       screen: LoginPage,
-    },
-    SignUp: {
-      screen: SignUpPages,
-    },
-    ForgotPassword: {
-      screen: ForgotPassword,
     },
     Otp: {
       screen: Otp,
@@ -277,8 +368,17 @@ const HomeStack = createStackNavigator(
     HomeTab: {
       screen: TabNavigator,
     },
-    LocationStack: {
-      screen: LocationStack,
+    Shopping: {
+      screen: ItemDetails,
+    },
+    MyCart: {
+      screen: MyCart,
+    },
+    PaymentOption: {
+      screen: PaymentOption,
+    },
+    Address: {
+      screen: AddressStack,
     },
     BookingStack: {
       screen: BookingStack,
@@ -289,9 +389,7 @@ const HomeStack = createStackNavigator(
     Purchase: {
       screen: Purchase,
     },
-    Payments: {
-      screen: Payments,
-    },
+
     PlumberStack: {
       screen: PlumberStack,
     },
@@ -301,8 +399,14 @@ const HomeStack = createStackNavigator(
     ElectronicStack: {
       screen: ElectronicStack,
     },
-    CleaningStack: {
-      screen: CleaningStack,
+    PainterStack: {
+      screen: PainterStack,
+    },
+    Subscription: {
+      screen: Subscription,
+    },
+    LocationStack: {
+      screen: LocationStack,
     },
   },
   {

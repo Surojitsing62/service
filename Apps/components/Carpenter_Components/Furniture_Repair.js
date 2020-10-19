@@ -28,21 +28,18 @@ export default class Furniture_Repair extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Furniture Leg Cap Installation"
-          price="119"
           desc="Addittional curtain rod brackets"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Table/Chair Wheels fitting"
-          price="169"
           desc="Includes fitting of up to 4 wheels"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="furniture_repair installtion(Greater than 48 inches"
-          price="566"
           desc="Addittional curtain rod brackets"
           navigation={this.props.navigation}
         />

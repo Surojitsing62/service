@@ -93,7 +93,7 @@ export default class Subscription extends Component {
               <SubscriptionsCards name="Painter" />
             </View>
             <TouchableWithoutFeedback
-              onPress={() => this.props.navigation.navigate('Payments')}>
+              onPress={() => this.props.navigation.goBack()}>
               <View style={styles.subscribeButton}>
                 <Text
                   style={{
@@ -138,9 +138,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: hp('1.5%'),
   },
   subscribeButton: {
-    //   width:wp('90')
-    height: hp('5%'),
-    backgroundColor: '#1f90e0',
+    // width: wp('93%'),
+    height: hp('5.5%'),
+    backgroundColor: COLORS.buttonColor,
     borderRadius: 10,
     elevation: 4,
     justifyContent: 'center',

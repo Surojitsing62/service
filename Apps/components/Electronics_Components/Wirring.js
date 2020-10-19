@@ -30,21 +30,18 @@ export default class Wirring extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Internal Wirring(per 5m)"
-          price="199"
           desc="Includes concealed wiring for single coonection"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Casing Wiring"
-          price="169"
           desc="Includes concealed wiring for single coonection"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Wiring Without Casing"
-          price="169"
           desc="Includes concealed wiring for single coonection"
           navigation={this.props.navigation}
         />

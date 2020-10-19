@@ -34,6 +34,12 @@ let PlumberSubImagedata = [
       'https://4.imimg.com/data4/EJ/YF/MY-31775454/water-pump-motor-500x500.jpg',
     title: 'Motor',
   },
+  // {
+  //   id: 7,
+  //   imgurl:
+  //     'https://image.shutterstock.com/image-photo/plumber-work-bathroom-plumbing-repair-260nw-1066126052.jpg',
+  //   title: 'Others',
+  // },
 ];
 
 export default PlumberSubImagedata;

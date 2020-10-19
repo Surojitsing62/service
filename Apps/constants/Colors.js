@@ -14,4 +14,5 @@ export const COLORS = {
   shadowTextColor: '#949491',
   staplesbgcolor: '#facac3',
   locationtrackerplacebgcolor: '#E5E5E5',
+  black: '#000000',
 };

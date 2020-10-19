@@ -30,21 +30,18 @@ export default class Motor extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Motor Installtion"
-          price="499"
           desc="Best suited for installation"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Motor Air Cavity Removal"
-          price="169"
           desc="Include air cavity removal which is not subject to 30 day warranty"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Washbasin Replacement"
-          price="469"
           desc="Exludes masonry work"
           navigation={this.props.navigation}
         />

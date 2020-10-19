@@ -28,28 +28,24 @@ export default class Door extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Accessary Installtion"
-          price="119"
           desc="Any one of lathc,chain,stopper,magnet"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Airdrop or door peephole installtion"
-          price="169"
           desc="Include repair of either single leg or headboard"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Door installation"
-          price="566"
           desc="For wooden doors only"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Door Repair"
-          price="266"
           desc="wood scraping"
           navigation={this.props.navigation}
         />

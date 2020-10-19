@@ -28,14 +28,12 @@ export default class Bed extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Bed Support Repair"
-          price="419"
           desc="Include repair of either single leg or headboard"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Bed Legs / Headboard Repair"
-          price="169"
           desc="Include repair of either single leg or headboard"
           navigation={this.props.navigation}
         />

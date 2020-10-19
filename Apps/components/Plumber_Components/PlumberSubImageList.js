@@ -53,6 +53,23 @@ export default class PlumberSubImageList extends Component {
             flexDirection: 'row',
           }}>
           {this.Imagelist()}
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Otherserives')}>
+            <View style={styles.Items}>
+              <Image
+                resizeMode="contain"
+                source={{
+                  uri:
+                    'https://camdenkelly.com/wp-content/uploads/2019/04/question-mark.png',
+                }}
+                style={styles.imageStyles}
+              />
+
+              <Text numberOfLines={2} style={styles.textsize}>
+                Others
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -61,7 +78,10 @@ export default class PlumberSubImageList extends Component {
 
 const styles = StyleSheet.create({
   ImageContainer: {
+    flex: 1,
     backgroundColor: '#fff',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   Items: {
     justifyContent: 'center',
@@ -75,13 +95,14 @@ const styles = StyleSheet.create({
   imageStyles: {
     width: wp('17%'),
     height: hp('8.5%'),
-    // backgroundColor: '#0000',
+    // backgroundColor: 'red',
     borderRadius: 100,
   },
   textsize: {
-    fontSize: hp('1.5%'),
+    fontSize: hp('1.8%'),
     padding: hp('0.3%'),
     margin: hp('0.4%'),
     textAlign: 'center',
+    fontWeight: 'bold',
   },
 });

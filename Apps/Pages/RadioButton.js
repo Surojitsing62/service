@@ -11,7 +11,6 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import InputText from './InputText';
 import {
   Container,
   Header,

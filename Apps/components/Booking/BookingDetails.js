@@ -13,12 +13,29 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {COLORS} from '../../constants/Colors';
-import {Card, Icon, Button} from 'native-base';
+import {Card, Icon, Button, Header, Title} from 'native-base';
 
 export default class BookingDetails extends Component {
   render() {
     return (
       <View style={styles.root}>
+        <Header
+          style={{
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            backgroundColor: COLORS.themecolor,
+          }}
+          androidStatusBarColor="#000">
+          <TouchableWithoutFeedback>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.navigate('Bookings')}>
+              <Icon name="arrowleft" type="AntDesign" />
+            </Button>
+          </TouchableWithoutFeedback>
+
+          <Title>Booking Details</Title>
+        </Header>
         <View style={styles.HeaderPlace}>
           <Text style={{fontSize: hp('2%'), fontWeight: 'bold'}}>
             30,Wed Oct 2020
@@ -36,8 +53,8 @@ export default class BookingDetails extends Component {
                 Dr somenath roy
               </Text>
               <Text style={{fontSize: hp('1.8%')}}>
-                144, Remount Rd, Majherhat, Mominpore, Kolkata, West Bengal
-                700027
+                Head Office-42,Nayanpur Road,Japorigog,Ganeshguri,Guwahati-6,
+                Assam
               </Text>
             </View>
           </Card>

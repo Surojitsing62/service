@@ -59,14 +59,6 @@ export default class Item extends Component {
                   <Text numberOfLines={2} style={styles.textsize}>
                     {this.props.itemName}
                   </Text>
-                  <Text>
-                    <Icon
-                      name="rupee"
-                      type="FontAwesome"
-                      style={styles.textsize}
-                    />{' '}
-                    {this.props.price}
-                  </Text>
                 </View>
                 {addBtn ? (
                   <TouchableNativeFeedback onPress={this.AddButtonHandle}>

@@ -28,28 +28,24 @@ export default class Tv extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Tv Installtion"
-          price="119"
           desc="Include wall  mounting and alignment"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Tv Uninstalltion"
-          price="169"
           desc="Include wall  mounting and alignment"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Tv installtion(Greater than 48 inches"
-          price="566"
           desc="Include wall  mounting and alignment"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc}
           itemName="Door Repair"
-          price="266"
           desc="Include wall  mounting and alignment"
           navigation={this.props.navigation}
         />

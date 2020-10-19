@@ -17,6 +17,8 @@ import Light from '../../components/Electronics_Components/Light';
 import DoorBell from '../../components/Electronics_Components/DoorBell';
 import Wirring from '../../components/Electronics_Components/Wirring';
 import TableFan from '../../components/Electronics_Components/TableFan';
+import HeaderBar from '../../constants/HeaderBar';
+
 export default class AddItemElectronic extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +27,7 @@ export default class AddItemElectronic extends Component {
   render() {
     return (
       <View style={styles.MainContainer}>
+        <HeaderBar name="Electronics" navigation={this.props.navigation} />
         <View style={styles.HeaderStyle}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <HeaderNameSubService HeaderBoxName="Fan" width={wp('20%')} />
@@ -58,7 +61,7 @@ export default class AddItemElectronic extends Component {
             // marginBottom: hp('1%'),
           }}>
           <TouchableWithoutFeedback
-            onPress={() => this.props.navigation.navigate('LocationStack')}>
+            onPress={() => this.props.navigation.navigate('Address')}>
             <View style={styles.subscribeButton}>
               <Text
                 style={{
@@ -95,13 +98,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   subscribeButton: {
-    // width: wp('90%'),
     height: hp('5%'),
     backgroundColor: '#1f90e0',
     borderRadius: 5,
     elevation: 4,
     justifyContent: 'center',
     alignItems: 'center',
-    // marginTop: hp('3%'),
   },
 });

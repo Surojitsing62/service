@@ -37,41 +37,36 @@ export default class LoginPage extends Component {
           <Text style={styles.textBody}>Log in to your existant account</Text>
           <View style={{marginTop: 20}} />
 
-          <Inputs name="Email" icon="user" />
-          <Inputs name="Password" icon="lock" pass={true} />
+          <Inputs name="Phone Number" icon="mobile-alt" />
+          <View style={{marginTop: hp('2%')}}>
+            <TouchableWithoutFeedback
+              onPress={() => this.props.navigation.navigate('Otp')}>
+              <View
+                style={[
+                  styles.Submitbutton_container,
+                  {
+                    backgroundColor: COLORS.buttonColor,
+                    marginVertical: hp('2%'),
+                  },
+                ]}>
+                <Text style={styles.submitText}>SIGN IN</Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
 
-          <Text
-            style={
-              ([styles.textBody],
-              {
-                alignSelf: 'flex-end',
-                // marginHorizontal: hp('2%'),
-                position: 'relative',
-                right: hp('3.5%'),
-                color: COLORS.buttonColor,
-              })
-            }
-            onPress={() => this.props.navigation.navigate('ForgotPassword')}>
-            Forgot Password
-          </Text>
-          {/* <Submit title="LOG IN" color="#0148a4" /> */}
-          <TouchableWithoutFeedback
-            onPress={() => this.props.navigation.navigate('HomeTab')}>
-            <View
-              style={[
-                styles.Submitbutton_container,
-                {backgroundColor: COLORS.buttonColor, marginVertical: hp('2%')},
-              ]}>
-              <Text style={styles.submitText}>SIGN IN</Text>
-            </View>
-          </TouchableWithoutFeedback>
-
-          {/* <Text style={styles.textBody}>Or connect using</Text>
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-            <Accounts color="#3b5c8f" icon="facebook" title="Facebook" />
-            <Accounts color="#ec482f" icon="google" title="Google" />
-          </View> */}
           <View
+            style={{
+              marginTop: hp('2%'),
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={styles.textBody}>Or connect using</Text>
+            <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+              <Accounts color="#3b5c8f" icon="facebook" title="Facebook" />
+              <Accounts color="#ec482f" icon="google" title="Google" />
+            </View>
+          </View>
+          {/* <View
             style={{
               flexDirection: 'row',
               marginVertical: hp('2%'),
@@ -83,7 +78,7 @@ export default class LoginPage extends Component {
               onPress={() => this.props.navigation.navigate('SignUp')}>
               Sign Up
             </Text>
-          </View>
+          </View> */}
         </View>
       </ScrollView>
     );
@@ -102,7 +97,7 @@ const styles = StyleSheet.create({
     marginVertical: hp('1%'),
   },
   textTitle: {
-    fontSize: hp('4.5%'),
+    fontSize: hp('4%'),
     marginVertical: hp('1%'),
   },
   textBody: {

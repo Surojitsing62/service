@@ -30,14 +30,12 @@ export default class TapMixer extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Hot & Cold Water Mixer Installtion"
-          price="450"
           desc="For a faulty Driverter"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Hot & Cold Water Mixer Repair"
-          price="216"
           desc="Inastalltion of tap to dummy pipe"
           navigation={this.props.navigation}
         />

@@ -1,130 +1,268 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, TouchableWithoutFeedback} from 'react-native';
-import RadioButton from './RadioButton';
+import {
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  Image,
+  ScrollView,
+  TouchableNativeFeedback,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {Icon} from 'native-base';
+
+import {
+  ListItem,
+  Text,
+  Radio,
+  Right,
+  Left,
+  Icon,
+  Button,
+  Header,
+  Title,
+} from 'native-base';
+
 import {COLORS} from '../constants/Colors';
-export default class PaymentCheckOut extends Component {
+import HeaderBar from '../constants/HeaderBar';
+
+export default class PaymentOption extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      VisaItemSelcted: false,
+      VisaItem: false,
+      UpiItemSelected: false,
+      UpiItem: false,
+      CodItemSelected: false,
+      CodItem: false,
+    };
   }
+  HandleChangeVisaItem = () => {
+    this.setState({VisaItemSelcted: true});
+    this.setState({VisaItem: true});
+    this.setState({UpiItem: false});
+    this.setState({UpiItem: false});
+    this.setState({CodItemSelected: false});
+    this.setState({CodItem: false});
+  };
+  HandleChangeUpiItem = () => {
+    this.setState({VisaItemSelcted: false});
+    this.setState({VisaItem: false});
+    this.setState({UpiItem: true});
+    this.setState({UpiItem: true});
+    this.setState({CodItemSelected: false});
+    this.setState({CodItem: false});
+  };
+  HandleChangeCodItem = () => {
+    this.setState({VisaItemSelcted: false});
+    this.setState({VisaItem: false});
+    this.setState({UpiItem: false});
+    this.setState({UpiItem: false});
+    this.setState({CodItemSelected: true});
+    this.setState({CodItem: true});
+  };
 
+  HandleChange = () => {
+    if (
+      this.state.VisaItemSelcted == true ||
+      this.state.UpiItemSelected == true ||
+      this.state.CodItemSelected == true
+    ) {
+      alert('payment successfully');
+      this.props.navigation.navigate('Home');
+    } else {
+      alert('plase seclet payment method');
+    }
+  };
   render() {
     return (
-      <View style={styles.rootContain}>
-        <View style={styles.HeaderStyle}>
-          <Text style={styles.HeaderTextStyle}>All Payments Options</Text>
-        </View>
-        <View
+      <View style={styles.root}>
+        <Header
           style={{
-            flex: 1,
-            justifyContent: 'space-between',
-            backgroundColor: '#fff',
-          }}>
-          <View style={styles.PaymentOptionsStyle}>
-            <RadioButton />
-          </View>
-          <View style={styles.ContinueButton}>
-            <View style={styles.amountStyle}>
-              <Text
-                style={{
-                  color: COLORS.buttonColor,
-                  fontSize: hp('2%'),
-                  fontWeight: 'bold',
-                }}>
-                Payble Amount
-              </Text>
-              <Text
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: hp('2.5%'),
-                  // letterSpacing: 1,
-                }}>
-                <Icon
-                  name="rupee"
-                  type="FontAwesome"
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            backgroundColor: COLORS.themecolor,
+          }}
+          androidStatusBarColor="#000">
+          <TouchableWithoutFeedback>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.navigate('Subscription')}>
+              <Icon name="arrowleft" type="AntDesign" />
+            </Button>
+          </TouchableWithoutFeedback>
+
+          <Title>Payments</Title>
+        </Header>
+        <ScrollView>
+          <View style={{width: wp('100%'), height: hp('50%')}}>
+            <TouchableOpacity>
+              <ListItem
+                onPress={this.HandleChangeVisaItem}
+                selected={this.state.VisaItemSelcted}>
+                <Left
                   style={{
-                    // color: COLORS.green,
-                    fontSize: hp('2.5%'),
-                  }}
-                />{' '}
-                280
-              </Text>
-            </View>
-            <TouchableWithoutFeedback
-              onPress={() => {
-                alert('payment successfull');
-                this.props.navigation.navigate('HomeTab');
-              }}>
-              <View style={styles.Button}>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: hp('2%'),
-                    color: '#fff',
-                    letterSpacing: 1,
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
                   }}>
-                  CONTINUE
-                </Text>
-              </View>
-            </TouchableWithoutFeedback>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Radio
+                      color={'#f0ad4e'}
+                      selectedColor={COLORS.themecolor}
+                      selected={this.state.VisaItem}
+                    />
+                    <View style={{marginLeft: hp('2%')}}>
+                      <Image
+                        resizeMode="contain"
+                        style={{width: wp('8%'), height: hp('4%')}}
+                        source={{
+                          uri:
+                            'https://w7.pngwing.com/pngs/753/672/png-transparent-credit-card-visa-mastercard-discover-card-american-express-visa-text-rectangle-logo.png',
+                        }}
+                      />
+                    </View>
+                  </View>
+                  <View style={{marginLeft: hp('2%')}}>
+                    <Text>Visa Card/ ATM</Text>
+                  </View>
+                </Left>
+              </ListItem>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <ListItem
+                onPress={this.HandleChangeUpiItem}
+                selected={this.state.UpiItemSelected}>
+                <Left
+                  style={{
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
+                  }}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Radio
+                      color={'#f0ad4e'}
+                      selectedColor={COLORS.themecolor}
+                      selected={this.state.UpiItem}
+                    />
+                    <View style={{marginLeft: hp('2%')}}>
+                      <Image
+                        resizeMode="contain"
+                        style={{width: wp('8%'), height: hp('4%')}}
+                        source={{
+                          uri:
+                            'https://www.searchpng.com/wp-content/uploads/2018/11/phone-pe.png',
+                        }}
+                      />
+                    </View>
+                  </View>
+                  <View style={{marginLeft: hp('2%')}}>
+                    <Text>PhonePe /UPI</Text>
+                  </View>
+                </Left>
+              </ListItem>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <ListItem
+                onPress={this.HandleChangeCodItem}
+                selected={this.state.CodItemSelected}>
+                <Left
+                  style={{
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
+                  }}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Radio
+                      color={'#f0ad4e'}
+                      selectedColor={COLORS.themecolor}
+                      selected={this.state.CodItem}
+                    />
+                    <View style={{marginLeft: hp('2%')}}>
+                      <Image
+                        resizeMode="contain"
+                        style={{width: wp('8%'), height: hp('4%')}}
+                        source={{
+                          uri:
+                            'https://static.thenounproject.com/png/1914661-200.png',
+                        }}
+                      />
+                    </View>
+                  </View>
+                  <View style={{marginLeft: hp('2%')}}>
+                    <Text>Cash on Delivery</Text>
+                  </View>
+                </Left>
+              </ListItem>
+            </TouchableOpacity>
           </View>
-        </View>
+        </ScrollView>
+
+        <TouchableNativeFeedback>
+          {/* <View style={{paddingHorizontal: hp('2%')}}> */}
+          <Button style={styles.ButtonStyle} onPress={this.HandleChange}>
+            <Text
+              style={{
+                fontSize: hp('2%'),
+                textAlign: 'center',
+                fontWeight: 'bold',
+                fontFamily: 'Roboto',
+                color: COLORS.white,
+              }}>
+              Make Payment
+            </Text>
+          </Button>
+          {/* </View> */}
+        </TouchableNativeFeedback>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  rootContain: {
+  root: {
     flex: 1,
+    justifyContent: 'space-between',
   },
-  BodyContain: {
-    // width: wp('100%'),
-    // height: hp('20%'),
-  },
-  HeaderStyle: {
-    backgroundColor: '#fff',
-    padding: hp('2%'),
+  HeaderTextPlace: {
+    alignItems: 'center',
+    width: wp('100%'),
+    height: hp('5%'),
+    alignItems: 'center',
+    backgroundColor: COLORS.buttonColor,
   },
   HeaderTextStyle: {
-    fontSize: hp('2%'),
+    fontSize: hp('2.2%'),
     fontWeight: 'bold',
+    fontFamily: 'Roboto-Light',
+    color: COLORS.HeaderbarIconColor,
   },
-  PaymentOptionsStyle: {
-    width: wp('100%'),
-
-    backgroundColor: '#fff',
-    marginTop: hp('2%'),
-  },
-  ContinueButton: {
-    flexDirection: 'row',
-    padding: hp('2%'),
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: wp('100%'),
-    height: hp('8%'),
-    borderTopWidth: 0.5,
-    borderColor: '#e3e3e3',
-    // backgroundColor: 'red',
-  },
-  Button: {
+  ButtonStyle: {
     justifyContent: 'center',
-    alignItems: 'center',
-    width: wp('50%'),
-    height: hp('6%'),
-    backgroundColor: '#ff6d33',
-    elevation: 2,
+    width: wp('90%'),
+    position: 'relative',
+    bottom: hp('2%'),
+    alignSelf: 'center',
+    elevation: 4,
     borderRadius: 5,
-  },
-  amountStyle: {
-    justifyContent: 'space-around',
-    alignItems: 'flex-start',
-    width: wp('40%'),
-    height: hp('6%'),
-    // backgroundColor: 'pink',
+    backgroundColor: COLORS.themecolor,
+    height: hp('5.5%'),
   },
 });

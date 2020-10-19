@@ -30,14 +30,12 @@ export default class Furniture extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Bed Assembly"
-          price="119"
           desc="Bunk Bed Assembly at $47"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Furniture Dismantle"
-          price="169"
           desc="Include repair of either single leg or headboard"
           navigation={this.props.navigation}
         />

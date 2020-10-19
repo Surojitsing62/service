@@ -30,21 +30,18 @@ export default class Light extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Blub Replacemnet(5 nos)"
-          price="199"
           desc="Replacement Upto 5 Bulbs"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Blub Holder Insatalltion"
-          price="169"
           desc="Includes creating cavity & installing lock"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Decorative Wall Light/Celling Light"
-          price="169"
           desc="Installtion or Repair"
           navigation={this.props.navigation}
         />

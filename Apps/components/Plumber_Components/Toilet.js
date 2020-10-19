@@ -30,21 +30,18 @@ export default class Toilet extends Component {
         <Item
           img={this.state.imgsrc}
           itemName="Western Toilet Installtion(Floor Mounted)"
-          price="1,499"
           desc="Best suited for installation"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Washbasin Repair"
-          price="169"
           desc="Suitable Inastalltion"
           navigation={this.props.navigation}
         />
         <Item
           img={this.state.imgsrc2}
           itemName="Washbasin Repair"
-          price="169"
           desc="Suitable Inastalltion"
           navigation={this.props.navigation}
         />
